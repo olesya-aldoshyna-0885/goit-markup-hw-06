@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
 }
+
 :root {
     --text-color: #212121;
     --accent-color: #2196F3;
@@ -49,6 +50,10 @@ address {
     margin-top: 20px;
 }
 
+button {
+    padding: 0;
+}
+
 /*Хедер*/
 .header-color {
     background-color: var(--last-color);
@@ -70,10 +75,6 @@ address {
 .part-nav {
     display: flex;
     align-items: center;
-}
-
-.header-color .link {
-    color: inherit;
 }
 
 .logo-blue,
@@ -107,7 +108,9 @@ address {
 }
 
 .link {
-    transition: var(--changes);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--changes), background-color var(--changes), fill var(--changes), border-color var(--changes);
 }
 
 .link:hover,
@@ -125,13 +128,16 @@ address {
 }
 
 .contacts-link {
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color var(--changes);
 }
+
 .connection {
     margin-right: 10px;
     fill: currentColor;
+    transition: fill var(--changes);
 }
 
 .connection:hover,
@@ -183,7 +189,7 @@ align-items: center;
     color: var(--last-color);
     cursor: pointer;
     border: none;
-    transition: var(--changes);
+    transition: color var(--changes), background-color var(--changes);
 }
 
 .filter-btn {
@@ -194,6 +200,7 @@ align-items: center;
     background-color: var(--grey-color);
     border-radius: 4px;
     padding: 6px 22px 6px 22px;
+    transition: color var(--changes), background-color var(--changes), box-shadow var(--changes);
 }
 
 .filter-btn:hover,
@@ -206,6 +213,16 @@ align-items: center;
 
 .studio-btn {
     min-width: 216px;
+}
+
+.submit-btn {
+    position: absolute;
+    left: 164px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+.button {
     height: 50px;
     font-weight: 700;
     font-size: 16px;
@@ -216,10 +233,11 @@ align-items: center;
     color: var(--last-color);
     background: #2196F3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: color var(--changes), box-shadow var(--changes), background var(--changes);
 }
 
-.studio-btn:hover,
-.studio-btn:focus {
+.button:hover,
+.button:focus {
     background-color: #188ce8;
     color: var(--last-color);
     box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
@@ -229,7 +247,7 @@ align-items: center;
 /* Студия*/
 .hero {
     max-width: 1600px;
-    margin:auto;
+    margin: auto;
     display: flex;
     align-items: center;
     text-align: center;
@@ -266,13 +284,18 @@ align-items: center;
     overflow: hidden;
 }
 
-.subtitle {
+.benefits-item > .subtitle {
     margin-bottom: 10px;
+    color: var(--text-color);
+}
+.subtitle {
+    margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
+    color: var(--last-color);
 }
 
 .second-title {
@@ -286,13 +309,13 @@ align-items: center;
 
 }
 
-.example-title{
-font-weight: 700;
-font-size: 14px;
-line-height: 1.14;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: var(--last-color);
+.example-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--last-color);
 }
 
 .team-box {
@@ -307,7 +330,7 @@ color: var(--last-color);
 }
 
 .benefits {
-    width: 270px;
+    
     margin-bottom: 0;
     font-size: 14px;
     line-height: 1.71;
@@ -352,13 +375,14 @@ color: var(--last-color);
 .benefits-icon {
     width: 270px;
     height: 120px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--grey-color);
     border-radius: 4px;
 }
+
 .benefits-item {
     flex-basis: calc((100% - 90px) / 4);
 }
@@ -396,11 +420,10 @@ color: var(--last-color);
     column-gap: 30px;
 }
 
-.customers-item {
-    border: 1px solid var(--soc-color);
-    border-radius: 4px;
+.customers-item {    
     width: 170px;
     height: 92px;
+    border-radius: 4px;
 }
 
 .customers-link {
@@ -410,15 +433,14 @@ color: var(--last-color);
     align-items: center;
     justify-content: center;
     fill: var(--soc-color);
+    border: 1px solid var(--soc-color);
+    border-radius: 4px;
+    transition: fill var(--changes), border var(--changes);
 }
 
-.customers-link:hover .soc-icon,
-.customers-link:focus .soc-icon {
+.customers-link:hover,
+.customers-link:focus {
     fill: var(--accent-color);
-}
-
-.customers-item:hover,
-.customers-item:focus {
     border: 1px solid var(--accent-color);
 }
 
@@ -437,6 +459,7 @@ color: var(--last-color);
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+    color: var(--text-color);
 }
 
 .type-projects {
@@ -446,6 +469,7 @@ color: var(--last-color);
     letter-spacing: 0.03em;
     color: var(--second-color);
 }
+
 .no-padding {
     padding-top: 0;
 }
@@ -467,6 +491,7 @@ color: var(--last-color);
 
 .works-link {
     display: block;
+    transition: color var(--changes), box-shadow var(--changes);
 }
 
 .works-link:hover,
@@ -490,6 +515,7 @@ color: var(--last-color);
 .soc-link:focus {
     background-color: var(--accent-color);
     fill: var(--last-color);
+    transition: background-color var(--changes), fill var(--changes);
 }
 
 .soc-list {
@@ -506,7 +532,7 @@ color: var(--last-color);
 
 .soc-footer {
     margin-left: 70px;
-    align-items: center;
+    margin-right: 93px;
 }
 
 .soc-list-footer {
@@ -514,21 +540,18 @@ color: var(--last-color);
     gap: 10px;
 }
 
-.soc-footer .subtitle {
-    color: var(--last-color);
-    margin-bottom: 20px;
-}
-
 .soc-list-footer .soc-link {
     fill: var(--last-color);
     background: rgba(255, 255, 255, 0.1);
+    transition: fill var(--changes), background-color var(--changes);
 }
 
 .soc-list-footer .soc-link:hover,
 .soc-list-footer .soc-link:focus {
-fill: var(--last-color);
-background-color: var(--accent-color);
+    fill: var(--last-color);
+    background-color: var(--accent-color);
 }
+
 /*Позицiонування*/
 .example-items {
     position: relative;
@@ -540,7 +563,8 @@ background-color: var(--accent-color);
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(47, 48, 58, 0.8);;
+    background-color: rgba(47, 48, 58, 0.8);
+    ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -554,7 +578,7 @@ background-color: var(--accent-color);
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: opacicity var(--changes), visibility var(--changes);
+    transition: opacity var(--changes), visibility var(--changes);
 }
 
 .is-hidden {
@@ -562,42 +586,53 @@ background-color: var(--accent-color);
     pointer-events: none;
     visibility: hidden;
 }
+
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform var(--changes);
-    display: flex;
-    justify-content: flex-end;
+    display: block;
     min-width: 528px;
     min-height: 581px;
     background-color: var(--last-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    transition: transform var(--changes);
 }
 
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0);
     transition: transform var(--changes);
 }
+
 .modal-btn {
+    position: absolute;
     display: flex;
+    top: 8px;
+    right: 8px;
+    left: 490px;
     align-items: center;
     justify-content: center;
     width: 30px;
     height: 30px;
-    margin-right: 8px;
-    margin-top: 8px;
     border-radius: 50%;
+    background-color: var(--last-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: var(--changes);
+    cursor: pointer;
+    transition: transform var(--changes), fill var(--changes);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    fill: var(--accent-color);
 }
 
 .overlay-card {
     position: relative;
     overflow: hidden;
 }
+
 .overlay-text {
     position: absolute;
     height: 100%;
@@ -614,8 +649,8 @@ background-color: var(--accent-color);
     transition: transform var(--changes);
 }
 
-.works-cards:hover .overlay-text,
-.works-cards:focus .overlay-text {
+.works-link:hover .overlay-text,
+.works-link:focus .overlay-text {
     transform: translateY(0%);
 }
 
@@ -623,6 +658,11 @@ background-color: var(--accent-color);
     position: relative;
     padding: 0 2px;
 }
+
+.current {
+    color: var(--accent-color);
+}
+
 .current::after {
     position: absolute;
     content: "";
@@ -633,23 +673,25 @@ background-color: var(--accent-color);
     height: 4px;
     border: none;
     border-radius: 2px;
-    background-color: var(--accent-color);
-    transform: scaleX(0);
-    transition: transform var(--changes);    
+    background-color: currentColor;
 }
 
-.current:hover::after,
-.current:focus::after {
-    transform: scaleX(1);
-}
 /*Форми*/
 
 .modal-form {
     position: absolute;
+    width: 100%;
+    height: 100%;
     padding: 40px;
 }
+
 .field {
     margin-bottom: 10px;
+}
+.field-form {
+    position: relative; 
+    width: 100%;
+    height: 40px;   
 }
 
 .field-comment {
@@ -657,22 +699,28 @@ background-color: var(--accent-color);
 }
 
 .field-check {
-    display: block;
+    position: relative;
+    display: flex;
     justify-content: center;
-    margin-bottom: 30px;    
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;   
 }
 
 textarea {
     resize: none;
 }
-.field label {
-    margin-bottom: 4px;
+
+textarea::placeholder {
+    color: rgba(117, 117, 117, 0.5);   
 }
+
 .field input {
     margin: 0;
 }
 .modal-ph {
     margin-bottom: 12px;
+    text-align: center;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.17;
@@ -680,25 +728,124 @@ textarea {
     color: var(--text-color);
 }
 
-.field-text {
-    width: 448px;
-    height: 40px;
+.field-text {    
+    width: 100%;
+    height: 100%;
+    padding: 12px 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    transition: border-color var(--changes);
+}
+
+.field-icon {
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    transition: fill var(--changes);
+}
+
+.field-text:focus + .field-icon,
+.field-text:focus,
+.field-textarea:focus {
+    border-color: 1px solid var(--accent-color);
+    border-radius: 4px;
+    fill: var(--accent-color)
 }
 
 .field-textarea {
     width: 448px;
     height: 120px;
     padding: 12px 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
     border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color var(--changes);
+}
+
+.label-text {
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--second-color);
+}
+
+.check-input {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.check-span {
+    position: relative;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--text-color);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: border var(--changes), background-color var(--changes), box-shadow var(--changes);
+}
+
+.check-input:checked + .check-span {
+    border: none;
+    background-color: var(--accent-color);
+}
+
+.check-icon {
+    fill: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: fill var(--changes);
+}
+
+.check-input:checked + .check-span .check-icon {
+    fill: var(--last-color);
+}
+
+.check-link {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.mailing {
+    display: flex;
+    gap: 12px;
+}
+.email-text {
+    width: 358px;
+    height: 50px;
+    padding: 15px 16px;
+    color: var(--last-color);
+    background-color: var(--dark-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 }
 
-.submit-btn {
+.email-text::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.email-btn {
     display: flex;
-        align-items: center;
-        justify-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
     width: 200px;
-    height: 50px;
+    gap: 10px;
+    border-radius: 4px;
 }
